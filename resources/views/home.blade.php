@@ -9,13 +9,13 @@
             class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
 </div>
 
-<!-- Content Row -->
-<div class="row">
     @if(session('status'))
         <div class="alert alert-success">
             {{session('status')}}
         </div>
     @endif
+<!-- Content Row -->
+<div class="row">
 
     <!-- Earnings (Monthly) Card Example -->
     <div class="col-xl-3 col-md-6 mb-4">

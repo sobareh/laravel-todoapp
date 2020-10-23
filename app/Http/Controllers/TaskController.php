@@ -35,26 +35,27 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        $jatuh_tempo = $request->get('date');
-
-        $newTask = new \App\Task;
-        $newTask->uraian_kegiatan = $request->get('uraian_kegiatan');
-        $newTask->sumber = $request->get('sumber');
-        $newTask->PIC = $request->get('pic');
-        $newTask->jatuh_tempo= Carbon::createFromFormat('Y-m-d',$jatuh_tempo)->format('Y-m-d H:i:s');     
-        $newTask->status = 'BELUM';
-        $newTask->approval = 'BELUM SETUJU';
-        
-        $file = $request->file('file');
-
-        if ($file) {
-            $file_path = $file->store('task-file', 'public');
-            $newTask->url_berkas = $file_path;
+        foreach ($request->get('pic') as $pic ) {
+            $jatuh_tempo = $request->get('date');
+            $newTask = new \App\Task;
+            $newTask->uraian_kegiatan = $request->get('uraian_kegiatan');
+            $newTask->sumber = $request->get('sumber');
+            $newTask->PIC = $pic;
+            $newTask->jatuh_tempo= Carbon::createFromFormat('Y-m-d',$jatuh_tempo)->format('Y-m-d H:i:s');     
+            $newTask->status = 'BELUM';
+            $newTask->approval = 'BELUM SETUJU';
+            
+            $file = $request->file('file');
+    
+            if ($file) {
+                $file_path = $file->store('task-file', 'public');
+                $newTask->url_berkas = $file_path;
+            }
+    
+            $newTask->save();
         }
 
-        $newTask->save();
-
-        return redirect()->route('home')->with('status', 'Berkas successfully saved and published');
+        return redirect()->route('home')->with('status', 'Berkas berhasil dibuat.');
     }
 
     /**

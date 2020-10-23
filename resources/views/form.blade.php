@@ -17,7 +17,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputPassword1">Uraian Kegiatan</label>
-                        <textarea class="form-control" name="uraian_kegiatan" id="exampleInputPassword1" placeholder="Password"></textarea>
+                        <textarea class="form-control" name="uraian_kegiatan" id="exampleInputPassword1" placeholder="Uraian Kegiatan..."></textarea>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Sumber</label>
@@ -27,12 +27,12 @@
                             <option value="Instruksi">Instruksi</option>
                             <option value="Nadine">Nadine</option>
                             <option value="Memo">Memo</option>
-                            <option value="Agenda">Agenda</option>
+                            <option value="Agenda Rapat">Agenda Rapat</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">PIC / Ditujukan ke:</label>
-                        <select name="pic" id="" class="form-control col-8">
+                        <select name="pic[]" id="" class="form-control col-8" multiple="">
                             <option value="" selected disabled hidden>Choose here...</option>
                             <option value="Kepala Subbagian Umum dan Kepatuhan Internal">Kepala Subbagian Umum dan Kepatuhan Internal</option>
                             <option value="Kepala Seksi Pengawasan dan Konsultasi I">Kepala Seksi Pengawasan dan Konsultasi I</option>

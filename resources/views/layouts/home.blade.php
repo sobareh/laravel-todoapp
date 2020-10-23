@@ -83,9 +83,9 @@
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="/task/create">
           <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
+          <span>Buat Berkas</span></a>
       </li>
 
       <!-- Divider -->
